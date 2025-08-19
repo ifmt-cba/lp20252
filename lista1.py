@@ -166,8 +166,19 @@ def q17():
 #    • L = Litros de combustível consumidos
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
+def litros_consumidos(distancia, media_consumo):
+    return distancia/media_consumo
+
+def distancia_percorrida(tempo, velocidade):
+    return tempo*velocidade
+
 def q18():
     cabecalho('QUESTÃO 18')
+    tempo = float(input('Tempo decorrido na viagem(horas): '))
+    velocidade = int(input('Velocidade média (km/h): '))
+    print(f'Distância percorrida: {distancia_percorrida(tempo,velocidade)}')
+    print(f'Litros consumidos: {litros_consumidos(distancia_percorrida(tempo,velocidade),12)}')
+
 
 #19. Faça um programa que calcule o valor de uma prestação em atraso.
 #    Para isso, o programa deve ler o valor da prestação vencida, a
