@@ -183,3 +183,31 @@ def q19():
 #    necessário também ler o valor da cotação do dólar.
 def q20():
     cabecalho('QUESTÃO 20')
+
+menu = '''
+[1] - Imprimir nome
+[2] - Imprimir produto
+[3] - Imprimir média
+[4] - Imprimir inteiro
+[5] - Ler e imprimir números reais
+[6] - Antecessor e Sucessor
+[7] - Dados de cliente
+[8] - Subtração
+[9] - 1/4
+[10] - Média Aritmética
+[11] - Operações aritméticas básicas
+[12] - Quadrado de um número
+[13] - Saldo de poupança
+[14] - Área e perímetro de um retângulo
+[15] - Desconto em produto
+[16] - Reajuste Salarial
+[17] - Conversão de temperatura
+[18] - Consumo de veículo
+[19] - Juros de prestação atrasada
+[20] - Conversão dólar-real
+
+Digite a opção a ser executada: 
+'''
+
+opcao = input(menu)
+eval(f'q{opcao}()')
