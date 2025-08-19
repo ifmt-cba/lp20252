@@ -15,7 +15,7 @@ def exemploSeSenao():
         print('Menor de idade')
     print('fim do programa')
 
-def exemploSe_SenaoSe_Senao:
+def exemploSe_SenaoSe_Senao():
     idade = int(input('Idade:'))
     if idade < 18:
         print('Menor de idade')    
@@ -26,7 +26,6 @@ def exemploSe_SenaoSe_Senao:
     else:
         print('Idoso')
     print('fim do programa')
-
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
