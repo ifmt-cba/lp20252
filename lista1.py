@@ -174,9 +174,9 @@ def distancia_percorrida(tempo, velocidade):
 
 def q18():
     cabecalho('QUESTÃO 18')
-    tempo = float(input('Tempo decorrido na viagem(horas): '))
+    tempo = float(input('Tempo decorrido na viagem(minutos): '))
     velocidade = int(input('Velocidade média (km/h): '))
-    print(f'Distância percorrida: {distancia_percorrida(tempo,velocidade)}')
+    print(f'Distância percorrida: {distancia_percorrida(tempo/60,velocidade)}')
     print(f'Litros consumidos: {litros_consumidos(distancia_percorrida(tempo,velocidade),12)}')
 
 

@@ -2,6 +2,32 @@
 Exercícios sobre os comandos de condição em python
 '''
 
+def exemploSe():
+    idade = int(input('Idade:'))
+    if idade >= 18:
+        print('Maior de idade')
+
+def exemploSeSenao():
+    idade = int(input('Idade:'))
+    if idade >= 18:
+        print('Maior de idade')    
+    else:
+        print('Menor de idade')
+    print('fim do programa')
+
+def exemploSe_SenaoSe_Senao:
+    idade = int(input('Idade:'))
+    if idade < 18:
+        print('Menor de idade')    
+    elif idade < 65:
+        print('Maior de idade')
+    elif idade < 50:
+        print('Pessoa madura')
+    else:
+        print('Idoso')
+    print('fim do programa')
+
+
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 
