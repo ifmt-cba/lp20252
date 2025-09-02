@@ -2,6 +2,10 @@
 Exercícios sobre os comandos de condição em python
 '''
 
+from datetime import date, datetime
+
+HOJE = datetime.now() # Pega data/hora do computador
+
 def exemploSe():
     idade = int(input('Idade:'))
     if idade >= 18:
@@ -29,33 +33,103 @@ def exemploSe_SenaoSe_Senao():
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
+def q1():
+    n1 = int(input('Digite um valor inteiro: '))
+    n2 = int(input('Digite outro valor inteiro: '))
+    soma = n1 + n2
+    if soma > 10:
+        print(soma)
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
 #   somando-se a ele mais 8, caso o valor somado seja menor ou igual a
 #   20, este deverá ser apresentado subtraindo-se 5.
+def q2():
+    n1 = int(input('Digite um valor inteiro: '))
+    n2 = int(input('Digite outro valor inteiro: '))
+    soma = n1 + n2
+    if soma > 20:
+        print(soma + 8)
+    else:
+        print(soma - 5)    
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q3():
+    num = int(input('Digite um inteiro: '))
+    if num % 3 == 0:
+        print('É múltiplo de 3')
+    else:
+        print('Não é múltiplo de 3')
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q4():
+    num = int(input('Digite um inteiro: '))
+    if num % 5 == 0:
+        print('É divisível por 5')
+    else:
+        print('Não é divisível por 5')
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+def q5():
+    num = int(input('Digite um inteiro: '))
+    if num % 3 == 0 and num % 7 == 0:
+        print('É divisível por 3 e 7')
+    else:
+        print('Não é divisível por 3 e 7')
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q6():
+    salario = float(input('Salário bruto: R$ '))
+    prestacao = float(input('Prestação para autorizar: R$ '))
+    prestacao_maxima = salario * 0.3
+    if prestacao > prestacao_maxima:
+        print('Empréstimo não autorizado')
+    else:
+        print('Empréstimo autorizado')
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q7():
+    num = int(input('Número inteiro: '))
+    if 20<=num<=50: # num >= 20 and num <= 50
+        print('Está entre 20 e 50')
+    else:
+        print('Não está entre 20 e 50')
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+def q8():
+    num = int(input('Número inteiro: '))
+    if num < 20:
+        print('É menor do que 20')
+    elif num > 20:
+        print('É maior do que 20')
+    else:
+        print('É igual a 20')
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q9():
+    ano_nasc = int(input('Ano de nascimento: '))
+    ano_atual = int(input('Ano atual: '))
+    if ano_nasc > ano_atual:
+        print('ERRO: Não pode ter nascido no futuro')
+    else:
+        print(f'Idade: {ano_atual - ano_nasc} anos')
+
+def q91():
+    data_str = input('Data de nascimento (dd/mm/aaaa): ')
+    print(f'Ano atual: {datetime.strftime(HOJE,"%Y")}')
+    data_nascimento = datetime.strptime(data_str, '%d/%m/%Y')
+    if data_nascimento > HOJE:
+        print('Data de nascimento inválida!')
+    else:
+        print(f'Idade: {int((HOJE - data_nascimento).days/365)} anos.')
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
