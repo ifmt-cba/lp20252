@@ -3,6 +3,7 @@ Exercícios sobre os comandos de condição em python
 '''
 
 from datetime import date, datetime
+from tkinter import Label, Entry, Button, Tk, messagebox
 
 HOJE = datetime.now() # Pega data/hora do computador
 
@@ -133,14 +134,76 @@ def q91():
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
-        
+def q10():
+    a = int(input('Número: '))
+    b = int(input('Número: '))
+    c = int(input('Número: '))
+    if a<b<c:
+        print(a,b,c)
+    if a<c<b:
+        print(a,c,b)
+    if b<a<c:
+        print(b,a,c)
+    if b<c<a:
+        print(b,c,a)
+    if c<a<b:
+        print(c,a,b)
+    if c<b<a:
+        print(c,b,a)
+
+
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+def q11():
+    num = int(input('Número: '))
+    maior = num
+    num = int(input('Número: '))
+    if num > maior:
+        maior = num
+    num = int(input('Número: '))
+    if num > maior:
+        maior = num
+    print(maior)
+
+def q112():
+    a = int(input('Número: '))
+    b = int(input('Número: '))
+    c = int(input('Número: '))
+    print(max([a,b,c]))
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idade
 #• Se é maior de 65 anos
+def q12():
+    def show_idade():
+        idade = int(txt_idade.get())
+        msg=''
+        if idade <18:
+            msg = 'Menor de Idade'
+        elif idade >= 65:
+            msg = 'Melhor idade'
+        else:
+            msg = 'Maior idade'
+        messagebox.showinfo(
+            title='Situação da Idade:',
+            message=f'{msg}'
+        )
+        txt_idade.delete(0,len(txt_idade.get()))
+        
+    window = Tk()
+    window.title('Questão 12')
+    window.config(padx=10, pady=10)
+    lbl_idade = Label(text='Idade:')
+    lbl_idade.grid(row=0, column=0)
+    global txt_idade
+    txt_idade = Entry(width=4)
+    txt_idade.grid(row=0,column=1)
+    txt_idade.focus()
+    btn_ok = Button(text='OK', width=5, command=show_idade)
+    btn_ok.grid(row=1, column=0, columnspan=2)
+    window.mainloop()
 
+q12()
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
