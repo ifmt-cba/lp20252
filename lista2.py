@@ -203,12 +203,23 @@ def q12():
     btn_ok.grid(row=1, column=0, columnspan=2)
     window.mainloop()
 
-q12()
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+def q13():
+    nome = input('Nome: ')
+    n1 = float(input('Nota 1: '))
+    n2 = float(input('Nota 2: '))
+    media = (n1 + n2)/2
+    print(f'{nome}: {n1}, {n2} = {media}')
+    if media >= 7:
+        print('Situação: Aprovado')
+    elif media >= 3:
+        print('Situação: Prova Final')
+    else:
+        print('Situação: Reprovado')
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -217,10 +228,29 @@ q12()
 #Maior que R$600,00 e menor ou igual a R$1200,00 20%
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
+def q14():
+    salario = float(input('Salário: '))
+    desconto_inss = float(0)
+    if salario <= 600:
+        desconto_inss = 0
+    elif salario <= 1200:
+        desconto_inss = salario * 0.2
+    elif salario <= 2000:
+        desconto_inss = salario * 0.25
+    else:
+        desconto_inss = salario * 0.3
+    print(f'Desconto do INSS: R$ {desconto_inss}')
+    print(f'Salário Líquido: R$ {salario - desconto}')
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
+def q15():
+    valor = float(input('Valor do produto: R$'))
+    if valor < 20:
+        print(f'Valor de Venda: R$ {valor * 1.45}')
+    else:
+        print(f'Valor de Venda: R$ {valor * 1.3}')
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -231,6 +261,20 @@ q12()
 #Juvenil A 11 - 13 anos
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
+def q16():
+    idade = int(input('Idade do nadador(a): '))
+    if idade < 5:
+        print('Não habilitado para participar')
+    elif idade <= 7:
+        print('Infantil A')
+    elif idade <= 10:
+        print('Infantil B')
+    elif idade <= 13:
+        print('Juvenil A')
+    elif idade <= 17:
+        print('Juvenil B')
+    else:
+        print('Sênior')
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -244,10 +288,38 @@ q12()
 #Acima de 45 até 59 anos R$150,00
 #Acima de 59 até 65 anos R$250,00
 #Maior que 65 anos R$400,00
+def q17():
+    nome = input('Nome: ')
+    idade = int(input('Idade: '))
+    if idade <= 10:
+        print('Valor do plano R$: 30,00')
+    elif idade <= 29:
+        print('Valor do plano R$: 60,00')
+    elif idade <= 45:
+        print('Valor do plano R$: 120,00')
+    elif idade <= 59:
+        print('Valor do plano R$: 150,00')
+    elif idade <= 65:
+        print('Valor do plano R$: 250,00')
+    else:
+        print('Valor do plano R$: 400,00')    
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
+def q18():
+    mes = int(input('Digite o número do mês: '))
+    match mes:
+        case 1:
+            print('Janeiro')
+        case 2:
+            print('Fevereiro')
+        case 3:
+            print('Março')
+        case 4:
+            print('Abril')
+        case _:
+            print('Mês Inválido!')
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -289,6 +361,25 @@ q12()
 #Peixe          230cal Sorvete diet     110cal Suco de laranja   70cal
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
+def q23():
+    prato = input('Prato (vegetariano/peixe/frango/carne): ')
+    calorias = 0
+    calorias += 180 if prato == 'vegetariano' else 0
+    calorias += 230 if prato == 'peixe' else 0
+    calorias += 250 if prato == 'frango' else 0
+    calorias += 350 if prato == 'carne' else 0
+    sobremesa = input('Sobremesa: (abacaxi/sorvete/mousse diet/mousse chocolate): ')
+    calorias += 75 if sobremesa == 'abacaxi' else 0
+    calorias += 110 if sobremesa == 'sorvete' else 0
+    calorias += 170 if sobremesa == 'mousse diet' else 0
+    calorias += 200 if sobremesa == 'mousse chocolate' else 0    
+    bebida = input('Bebida: (chá/laranja/melão/refrigerante): ')
+    calorias += 20 if bebida == 'chá' else 0
+    calorias += 70 if bebida == 'laranja' else 0
+    calorias += 100 if bebida == 'melão' else 0
+    calorias += 65 if bebida == 'refrigerante' else 0
+
+    print(f'Total de calorias do pedido: {calorias} cal')
 
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
@@ -307,3 +398,5 @@ q12()
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
 
+opcao = input('Digite o número da questão: ')
+eval(f'q{opcao}()')
