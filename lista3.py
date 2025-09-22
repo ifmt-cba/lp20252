@@ -2,6 +2,26 @@
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
 
+def exemploPara():
+    for contador in range(10):
+        print(contador, end=' ')
+    print('')
+    for contador in range(1,10):
+        print(contador, end=' ')
+    print('')
+    for contador in range(1,10,2):
+        print(contador, end=' ')
+
+def exemploEnquanto():
+    contador = 0
+    while contador < 10:
+        contador += 1               # equivale a contador = contador + 1
+        if contador == 7:
+            break                   # interrompe o laço
+        if contador == 3:
+            continue                # salta para a próxima iteração
+        print(contador, end=' ')    # imprime sem quebra de linha
+
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
