@@ -91,7 +91,7 @@ def q7():
         media_turma += media
         resultado += f'{nome}\t{n1}\t{n2}\t{media}\n'
     print(resultado)
-    print(f'Média da Turma: {round(media_turma/MAX,1)})
+    print(f'Média da Turma: {round(media_turma/MAX,1)}')
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
@@ -119,7 +119,27 @@ def q7():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
-    
+def q10():
+    PAISES=3
+    JOGADORES=3
+    soma_peso = 0
+    soma_idade = 0
+    for pais in range(PAISES):
+        print(f'País: {pais}')
+        soma_peso_pais = 0
+        soma_idade_pais = 0
+        for _ in range(JOGADORES):
+            idade = int(input('Idade: '))
+            peso = int(input('Peso: '))
+            soma_peso_pais += peso
+            soma_idade_pais += idade
+            soma_peso += peso
+            soma_idade += idade
+        print(f'Idade média: {soma_idade_pais/JOGADORES}')
+        print(f'Peso médio: {soma_peso_pais/JOGADORES}')
+    print(f'Idade média geral: {soma_idade/JOGADORES*PAISES}')
+    print(f'Peso médio geral: {soma_peso/JOGADORES*PAISES}')
+
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
