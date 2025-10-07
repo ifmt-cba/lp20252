@@ -1,3 +1,4 @@
+import random
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
@@ -143,6 +144,16 @@ def q10():
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
+def q11():
+    contador = 0    # qtde de números entre 100 e 200
+    while True:     # laço infinito
+        numero = random.randrange(201)
+        print(numero, end=' ')
+        contador += 1 if numero >= 100 and numero <= 200 else 0
+        if numero == 0:
+            break
+    print(f'\nQtde de números entre 100 e 200: {contador}')
+
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
