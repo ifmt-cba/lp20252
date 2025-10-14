@@ -151,14 +151,24 @@ def q11():
         print(numero, end=' ')
         contador += 1 if numero >= 100 and numero <= 200 else 0
         if numero == 0:
-            break
+            break   # interrompe o laço
     print(f'\nQtde de números entre 100 e 200: {contador}')
-
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+def q12():
+    paisA = 5_000_000
+    paisB = 7_000_000
+    ano = 0
+    while paisA < paisB:
+        ano += 1
+        paisA *= 1.03
+        paisB *= 1.02
+    print(f'Serão necessários {ano} anos para o país A ultrapassar o B!')
+    print(f'População do país A: {paisA}')
+    print(f'População do país B: {paisB}')
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
@@ -176,6 +186,24 @@ def q11():
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
+def fatorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n*fatorial(n-1)
+
+def q14():
+    n = 1
+    while n != 0:
+        try:
+            n = int(input('Digite o número para cálculo: '))
+            print(fatorial(n))
+        except ValueError:
+            print('Valor digitado não é um inteiro!')
+        except:
+            print('Erro desconhecido contate o adm do sistema!')
+
+
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
