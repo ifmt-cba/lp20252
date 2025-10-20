@@ -203,12 +203,21 @@ def q14():
         except:
             print('Erro desconhecido contate o adm do sistema!')
 
-
-
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
+def q15():
+    idade = 1
+    c_21, c_50 = 0, 0
+    while idade != 0:
+        idade = int(input('Digite uma idade: '))
+        if idade < 21:
+            c_21 += 1
+        if idade > 50:
+            c_50 += 1
+    print(f'Qtde de pessoas menores de 21: {c_21}')
+    print(f'Qtde de pessoas maiores de 50: {c_50}')
 
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
 #sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
