@@ -265,6 +265,35 @@ def q17():
         print(f'{produtos[item[0]]} - Qtde: {item[1]} - R$ {produtos[item[0]][2]*item[1]}')
         valor_total += produtos[item[0]][2]*item[1]
     print(f'VALOR TOTAL DO CARRINHO: R$ {valor_total}')
+
+def q172():
+    arquivo = open('produtos.csv','r')
+    produtos = dict()
+    for produto in arquivo: # percorre linha a linha guardando o conteúdo na var produto
+        campos = produto.strip().split(';') # separa a linha em campos, tendo como separador o ;
+        campos = [int(campos[0]),campos[1],float(campos[2])] # converte os campos que são numéricos
+        produtos[campos[0]] = campos # cria o dicionário tendo como chave o cód do produto e resultado a lista de campos do produto
+    arquivo.close()
+    carrinho = []
+    arquivo = open('carrinho.csv','w')
+    while True:
+        print('PRODUTOS DA LOJA:')
+        for p in produtos:
+            print(f'{produtos[p]}')
+        cod = int(input('Digite o código do produto a comprar: '))
+        if cod == 0:
+            break
+        qtde = int(input('Digite a qtde a comprar do produto selecionado: '))
+        item = [cod,qtde]
+        carrinho.append(item)
+        arquivo.write(f'{item[0]};{item[1]}\n')
+    arquivo.close()
+    print('ITENS DO CARRINHO:')
+    valor_total = 0
+    for item in carrinho:
+        print(f'{produtos[item[0]]} - Qtde: {item[1]} - R$ {produtos[item[0]][2]*item[1]}')
+        valor_total += produtos[item[0]][2]*item[1]
+    print(f'VALOR TOTAL DO CARRINHO: R$ {valor_total}')
     
 #18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
 #serviços diários de:
