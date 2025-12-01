@@ -49,28 +49,35 @@ O programa deve:
   O objetivo é ajudar o usuário a entender para onde vai o seu dinheiro.
 
 # 5. Catálogo de Filmes (CSV)
-João Vitor e Murilo
+**Projeto: https://github.com/joaogato1048-creator/webzorde**
+
+Integrantes: João Vitor e Murilo
+NAO SOUBE RESPONDER O QUE ERA O UTF-8
+
 Crie um programa em Python que gerencie um catálogo de filmes armazenado em um arquivo CSV (colunas: título, ano, gênero, avaliação).
 O programa deve permitir:
 
-- Listar todos os filmes;
-- Buscar filmes por gênero ou ano;
-- Adicionar novos filmes;
-- Calcular a média das avaliações;
-- Salvar as alterações no mesmo arquivo CSV.
+- Listar todos os filmes; OK
+- Buscar filmes por gênero ou ano; NAO OK
+- Adicionar novos filmes; OK
+- Calcular a média das avaliações; OK
+- Salvar as alterações no mesmo arquivo CSV. OK
 
 # 6. Biblioteca
-Luzineia e Mateus
+**Projeto: https://github.com/Matheus1f65/Biblioteca**
+
+Integrantes: Luzineia e Mateus
+
 Desenvolva um programa em Python, executado no console, que gerencie os registros de uma pequena biblioteca a partir de um arquivo CSV contendo informações dos livros (título, autor, ano, gênero e disponibilidade).
 O programa deve:
 
-- Ler o arquivo CSV e carregar os dados em uma estrutura adequada (lista de dicionários, por exemplo);
+- Ler o arquivo CSV e carregar os dados em uma estrutura adequada (lista de dicionários, por exemplo); OK
 - Permitir ao usuário, via menu de opções no console:
-- Listar todos os livros;
-- Buscar livros por autor, título ou gênero;
-- Registrar empréstimos e devoluções (alterando o status de disponibilidade);
-- Adicionar novos livros e salvar as alterações no arquivo CSV.
-- Garantir que todas as atualizações sejam persistidas no arquivo original.
+- Listar todos os livros; OK
+- Buscar livros por autor, título ou gênero; OK
+- Registrar empréstimos e devoluções (alterando o status de disponibilidade); OK
+- Adicionar novos livros e salvar as alterações no arquivo CSV.OK
+- Garantir que todas as atualizações sejam persistidas no arquivo original. OK
 
 # 7. Controle de Chamados de Manutenção/Suporte
 Gabriel Almeida
